@@ -1,9 +1,8 @@
-import './style.css'
 import ReactDOM from 'react-dom/client'
-import Experience from './Experience.jsx'
+import App from './App.jsx'
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(
-    <Experience />
+    <App />
 )
