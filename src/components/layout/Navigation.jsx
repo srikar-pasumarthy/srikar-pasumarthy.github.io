@@ -5,7 +5,7 @@ export default function Navigation() {
     
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['hero', 'about', 'work', 'projects'];
+            const sections = ['hero', 'work', 'projects'];
             const scrollPosition = window.scrollY + 100; // Add offset for better detection
             
             for (const section of sections) {
@@ -39,16 +39,6 @@ export default function Navigation() {
     return (
         <nav className="nav">
             <div className="nav-links">
-                <a 
-                    href="#about" 
-                    className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection('about');
-                    }}
-                >
-                    About
-                </a>
                 <a 
                     href="#work" 
                     className={`nav-link ${activeSection === 'work' ? 'active' : ''}`}

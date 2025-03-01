@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from './components/layout/Navigation';
 import TerminalAnimation from './components/animations/TerminalAnimation';
-import Hero from './components/sections/Hero';
-import About from './components/sections/About';
+import HeroAbout from './components/sections/HeroAbout';
 import Work from './components/sections/Work';
 import Projects from './components/sections/Projects';
 import './styles/style.css';
@@ -48,8 +47,7 @@ export default function App() {
             <div style={mainContentStyle}>
                 <Navigation />
                 <main>
-                    <Hero />
-                    <About />
+                    <HeroAbout />
                     <Work />
                     <Projects />
                 </main>
