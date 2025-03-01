@@ -3,18 +3,32 @@ import { workExperiences } from '../../data/workExperience';
 
 export default function Work() {
     return (
-        <section id="work" className="section">
-            <div className="section-content">
-                <h2>Work Experience</h2>
+      <section id="work" className="section work-section">
+        <div className="section-content">
+          <div className="mega-title">work</div>
+          
+          <div className="work-items">
+            {workExperiences.map(job => (
+              <div key={job.id} className="work-item">
+                <h3 className="work-title">{job.title}</h3>
+                <div className="work-company">{job.company}</div>
+                <div className="work-period">{job.period}</div>
                 
-                {workExperiences.map(job => (
-                    <div key={job.id} className="work-item">
-                        <h3>{job.title}</h3>
-                        <p>{job.company} • {job.period}</p>
-                        <p>{job.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
+                <ul className="work-responsibilities">
+                  {job.responsibilities.map((responsibility, index) => (
+                    <li key={index}>{responsibility}</li>
+                  ))}
+                </ul>
+                
+                <div className="tech-tags">
+                  {job.technologies.map((tech, index) => (
+                    <span key={index} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     );
-}
+  }

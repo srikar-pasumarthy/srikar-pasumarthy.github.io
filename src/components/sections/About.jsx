@@ -1,13 +1,39 @@
 import React from 'react';
 
+const imagePlaceholders = [
+  "",
+  "",
+  ""
+];
+
 export default function About() {
-    return (
-        <section id="about" className="section">
-            <div className="section-content">
-                <h2>About Me</h2>
-                <p>I'm a passionate software engineer with a focus on building elegant, user-centric solutions. 
-                When I'm not coding, you can find me exploring new technologies or contributing to open-source projects.</p>
-            </div>
-        </section>
-    );
+  return (
+    <section id="about" className="section about-section">
+      <div className="section-content">
+        <div className="mega-title">about</div>
+        
+        <div className="about-content">
+          <div className="stacked-images">
+            {imagePlaceholders.map((src, index) => (
+              <div 
+                key={index} 
+                className="stacked-image"
+                style={{
+                  backgroundImage: `url(${src})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
+            ))}
+          </div>
+          
+          <div className="about-text">
+            <p>
+              // TODO: ABOUT ME TEXT
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
