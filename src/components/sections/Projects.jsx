@@ -1,5 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { projects } from '../../data/projects';
+
+// Project card with mouse parallax effect
+const ProjectCard = ({ project }) => {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const cardRef = useRef(null);
+  
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    
+    setTilt({ x, y });
+  };
+  
+  const handleMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
+  
+  return (
+    <div 
+      ref={cardRef}
+      className="project-card glass-card"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transform: `perspective(1000px) rotateX(${tilt.y * 5}deg) rotateY(${tilt.x * -5}deg) scale3d(1, 1, 1)`,
+        transition: 'transform 0.1s ease'
+      }}
+    >
+      <div className="project-card-content">
+        <h3 className="project-title">{project.title}</h3>
+        <p className="project-description">{project.description}</p>
+        
+        <div className="project-technologies">
+          {project.technologies.map((tech, index) => (
+            <span key={index} className="tech-tag">{tech}</span>
+          ))}
+        </div>
+        
+        <div className="project-links">
+          {project.githubUrl && (
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              <span>Code</span>
+            </a>
+          )}
+          {project.demoUrl && (
+            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              <span>Demo</span>
+            </a>
+          )}
+        </div>
+      </div>
+      
+      {/* Glowing border effect */}
+      <div className="project-card-glow"></div>
+    </div>
+  );
+};
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -7,7 +76,7 @@ export default function Projects() {
   
   const categories = ['All', 'Machine Learning', 'Web Dev', 'Misc.'];
   
-  useEffect(() => {
+  React.useEffect(() => {
     if (activeFilter === 'All') {
       setFilteredProjects(projects);
     } else {
@@ -18,6 +87,7 @@ export default function Projects() {
   
   return (
     <section id="projects" className="section projects-section">
+      <div className="bg-gradient"></div>
       <div className="section-content">
         <div className="mega-title">projects</div>
         
@@ -35,28 +105,165 @@ export default function Projects() {
         
         <div className="project-grid">
           {filteredProjects.map(project => (
-            <div key={project.id} className="project-item">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              
-              <div className="project-technologies">
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-              
-              <div className="project-links">
-                {project.githubUrl && (
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">GitHub</a>
-                )}
-                {project.demoUrl && (
-                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="project-link">Live Demo</a>
-                )}
-              </div>
-            </div>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
+      
+      <style jsx>{`
+        .projects-section {
+          background-color: var(--dark-bg);
+          color: var(--text-primary);
+        }
+        
+        .filter-controls {
+          display: flex;
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+          background: none;
+          border: none;
+          font-family: 'Manrope', sans-serif;
+          font-size: 1rem;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          color: var(--text-secondary);
+          position: relative;
+          transition: color var(--transition-normal);
+        }
+        
+        .filter-btn::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: var(--primary-color);
+          transition: width var(--transition-normal);
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+          color: var(--text-primary);
+        }
+        
+        .filter-btn:hover::after,
+        .filter-btn.active::after {
+          width: 100%;
+        }
+        
+        .project-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 2.5rem;
+        }
+        
+        .project-card {
+          position: relative;
+          padding: 2rem;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+        
+        .project-card:hover {
+          transform: translateY(-6px);
+          box-shadow: var(--shadow-lg);
+        }
+        
+        .project-card:hover .project-card-glow {
+          opacity: 1;
+        }
+        
+        .project-card-content {
+          position: relative;
+          z-index: 2;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .project-card-glow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          opacity: 0;
+          transition: opacity var(--transition-normal);
+        }
+        
+        .project-title {
+          font-size: 1.8rem;
+          margin-bottom: 1rem;
+          background: linear-gradient(90deg, #fff, #e0e0e0);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        
+        .project-description {
+          margin-bottom: 1.5rem;
+          color: var(--text-secondary);
+          flex-grow: 1;
+        }
+        
+        .project-technologies {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 0.4rem 0.8rem;
+          border-radius: var(--border-radius-sm);
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+        }
+        
+        .project-links {
+          display: flex;
+          gap: 1rem;
+          margin-top: auto;
+        }
+        
+        .project-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: var(--border-radius-sm);
+          color: var(--text-primary);
+          text-decoration: none;
+          transition: all var(--transition-normal);
+        }
+        
+        .project-link:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+          .project-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .filter-controls {
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }
