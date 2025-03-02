@@ -18,7 +18,8 @@ export default function HeroAbout() {
                 I am currently a Software Engineer on the FI eTrading team at Truist Financial. [NEEDS WORK]
               </p>
               <p>
-                In my free time, I enjoy fencing, cooking, reading, and watching Tottenham Hotspurs [NEEDS WORK]
+              When I'm not coding, you'll find me reading books, experimenting with new recipes, 
+              travelling the world, or ruining my day watching Tottenham Hotspurs play [NEEDS WORK]
               </p>
             </div>
           </div>
