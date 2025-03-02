@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { projects } from '../../data/projects';
 
 // Project card with mouse parallax effect
@@ -76,7 +76,7 @@ export default function Projects() {
   
   const categories = ['All', 'Machine Learning', 'Web Dev', 'Misc.'];
   
-  React.useEffect(() => {
+  useEffect(() => {
     if (activeFilter === 'All') {
       setFilteredProjects(projects);
     } else {
@@ -109,161 +109,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-      
-      <style jsx>{`
-        .projects-section {
-          background-color: var(--dark-bg);
-          color: var(--text-primary);
-        }
-        
-        .filter-controls {
-          display: flex;
-          gap: 2rem;
-          margin-bottom: 3rem;
-        }
-        
-        .filter-btn {
-          background: none;
-          border: none;
-          font-family: 'Manrope', sans-serif;
-          font-size: 1rem;
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-          color: var(--text-secondary);
-          position: relative;
-          transition: color var(--transition-normal);
-        }
-        
-        .filter-btn::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background-color: var(--primary-color);
-          transition: width var(--transition-normal);
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-          color: var(--text-primary);
-        }
-        
-        .filter-btn:hover::after,
-        .filter-btn.active::after {
-          width: 100%;
-        }
-        
-        .project-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 2.5rem;
-        }
-        
-        .project-card {
-          position: relative;
-          padding: 2rem;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-          transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-        }
-        
-        .project-card:hover {
-          transform: translateY(-6px);
-          box-shadow: var(--shadow-lg);
-        }
-        
-        .project-card:hover .project-card-glow {
-          opacity: 1;
-        }
-        
-        .project-card-content {
-          position: relative;
-          z-index: 2;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-        
-        .project-card-glow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 2px;
-          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-          opacity: 0;
-          transition: opacity var(--transition-normal);
-        }
-        
-        .project-title {
-          font-size: 1.8rem;
-          margin-bottom: 1rem;
-          background: linear-gradient(90deg, #fff, #e0e0e0);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-        
-        .project-description {
-          margin-bottom: 1.5rem;
-          color: var(--text-secondary);
-          flex-grow: 1;
-        }
-        
-        .project-technologies {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.6rem;
-          margin-bottom: 1.5rem;
-        }
-        
-        .tech-tag {
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 0.4rem 0.8rem;
-          border-radius: var(--border-radius-sm);
-          font-size: 0.8rem;
-          color: var(--text-secondary);
-        }
-        
-        .project-links {
-          display: flex;
-          gap: 1rem;
-          margin-top: auto;
-        }
-        
-        .project-link {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.5rem 1rem;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: var(--border-radius-sm);
-          color: var(--text-primary);
-          text-decoration: none;
-          transition: all var(--transition-normal);
-        }
-        
-        .project-link:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: var(--primary-color);
-        }
-        
-        @media (max-width: 768px) {
-          .project-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .filter-controls {
-            overflow-x: auto;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-          }
-        }
-      `}</style>
     </section>
   );
 }
