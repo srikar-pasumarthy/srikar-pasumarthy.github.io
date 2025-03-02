@@ -74,7 +74,7 @@ export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [filteredProjects, setFilteredProjects] = useState(projects);
   
-  const categories = ['All', 'Machine Learning', 'Web Dev', 'Misc.'];
+  const categories = ['All', 'Machine Learning', 'Hardware & Low Level', 'Web / Mobile Dev', 'Misc.'];
   
   useEffect(() => {
     if (activeFilter === 'All') {
