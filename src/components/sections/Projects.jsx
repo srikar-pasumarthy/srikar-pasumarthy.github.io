@@ -73,6 +73,8 @@ const ProjectCard = ({ project }) => {
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef(null);
   
   const categories = ['All', 'Machine Learning', 'Hardware & Low Level', 'Web / Mobile Dev', 'Misc.'];
   
@@ -85,11 +87,32 @@ export default function Projects() {
     }
   }, [activeFilter]);
   
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+  
   return (
-    <section id="projects" className="section projects-section">
+    <section id="projects" className="section projects-section" ref={sectionRef}>
       <div className="bg-gradient"></div>
       <div className="section-content">
-        <div className="mega-title">projects</div>
+        <div className={`mega-title ${isInView ? 'fade-in' : ''}`}>projects</div>
         
         <div className="filter-controls">
           {categories.map(category => (
