@@ -52,15 +52,7 @@ export default function App() {
         : 'loading-screen';
 
     return (
-        <>
-            {/* Preloading screen */}
-            <div className={loadingScreenClasses}>
-                <div className="loading-animation">
-                    <div className="loading-bar"></div>
-                    <div className="loading-text">Loading...</div>
-                </div>
-            </div>
-            
+        <>            
             <div className={isLoaded ? 'app-loaded' : 'app-loading'}>
                 {/* Terminal animation */}
                 {showAnimation && (

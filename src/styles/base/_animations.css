@@ -76,62 +76,6 @@
   display: block;
 }
 
-/* Loading screen */
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--dark-bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  pointer-events: none;
-}
-
-.loading-screen-visible {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.loading-animation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.loading-bar {
-  width: 150px;
-  height: 3px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-  overflow: hidden;
-  position: relative;
-}
-
-.loading-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 30%;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  animation: loading 1.5s infinite;
-}
-
-.loading-text {
-  font-family: 'Manrope', sans-serif;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-}
-
 /* Custom cursor styling */
 html {
   cursor: default;
