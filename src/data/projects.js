@@ -1,65 +1,111 @@
 export const projects = [
 {
 id: 1,
-title: "Please Just Tell me the Time",
-description: "A deep learning model that classifies images with high accuracy using TensorFlow and CNN architecture.",
-category: "Machine Learning",
-technologies: ["Python", "TensorFlow", "Keras", "NumPy"],
-githubUrl: "https://github.com/username/image-classifier",
-demoUrl: "https://demo-url.com/image-classifier"
+title: "Personal Website",
+description: "The website you are looking at right now 😊",
+category: "Web Dev",
+technologies: ["JavaScript", "HTML", "CSS", "React"],
+githubUrl: "https://github.com/srikar-pasumarthy/srikar-pasumarthy.github.io",
+demoUrl: "https://srikar-pasumarthy.github.io/"
 },
+
+{
+id: 11,
+title: "UNC Golf (IOS App)",
+description: "A SwiftUI app built for UNC's golf teams.",
+category: "Web Dev",
+technologies: ["Swift", "SwiftUI"],
+githubUrl: null,
+demoUrl: "https://apps.apple.com/us/app/unc-golf/id6480014034"
+},
+
+{
+id: 9,
+title: "Panorama",
+description: "An application that stiches N images together to make a panorama.",
+category: "Machine Learning",
+technologies: ["Python", "OpenCV"],
+githubUrl: "https://github.com/srikar-pasumarthy/panorama",
+demoUrl: null
+},
+
 {
 id: 2,
-title: "Real-time Chat Application",
-description: "WebSocket-powered chat application with features like typing indicators, read receipts, and group chats.",
-category: "Web Dev",
-technologies: ["React", "Node.js", "Socket.io", "Express", "MongoDB"],
-githubUrl: "https://github.com/username/real-time-chat",
-demoUrl: "https://demo-url.com/chat-app"
+title: "Please Just Tell me the Time",
+description: "A clock that tells the wrong time when specific people look at it. Won 🥇 at UNC Makerfest 2023!",
+category: "Machine Learning",
+technologies: ["Python", "OpenCV"],
+githubUrl: "https://github.com/srikar-pasumarthy/PleaseJustTellMeTheTime",
+demoUrl: "https://www.youtube.com/shorts/EQrCS4ZH3Co"
 },
+
 {
 id: 3,
-title: "E-commerce Platform",
-description: "Full-featured online store with product catalog, cart functionality, and payment processing.",
-category: "Web Dev",
-technologies: ["React", "Redux", "Node.js", "Stripe API", "Firebase"],
-githubUrl: "https://github.com/username/ecommerce-platform",
-demoUrl: "https://demo-url.com/ecommerce"
+title: "Optimal Character Recognition",
+description: "A CNN capable of translating handwritten text into typed text.",
+category: "Machine Learning",
+technologies: ["Python", "OpenCV", "TensorFlow"],
+githubUrl: "https://github.com/srikar-pasumarthy/optimal-character-recognition",
+demoUrl: null
 },
+
 {
 id: 4,
-title: "Sentiment Analysis Tool",
-description: "NLP-based tool that analyzes customer reviews and feedback to determine sentiment and key themes.",
-category: "Machine Learning",
-technologies: ["Python", "NLTK", "Scikit-learn", "Pandas", "Matplotlib"],
-githubUrl: "https://github.com/username/sentiment-analyzer",
-demoUrl: null
+title: "Laptop Inception",
+description: "Using a website to display a 3D modeled macbook to display a website.",
+category: "Web Dev",
+technologies: ["JavaScript", "HTML", "CSS", "React-3-Fiber"],
+githubUrl: "https://github.com/srikar-pasumarthy/threejs-portfolio",
+demoUrl: "https://srikar-pasumarthy.github.io/threejs-portfolio/dist/index.html"
 },
+
 {
 id: 5,
-title: "Budget Tracker",
-description: "Personal finance application for tracking expenses, creating budgets, and visualizing spending patterns.",
+title: "Water Reflection Shader",
+description: "A website that showcases a water reflection shader in action.",
 category: "Web Dev",
-technologies: ["Vue.js", "Firebase", "Chart.js", "Tailwind CSS"],
-githubUrl: "https://github.com/username/budget-tracker",
-demoUrl: "https://demo-url.com/budget-app"
+technologies: ["JavaScript", "HTML", "CSS", "GLSL"],
+githubUrl: "https://github.com/srikar-pasumarthy/water-reflection",
+demoUrl: "https://srikar-pasumarthy.github.io/water-reflection/"
 },
+
 {
-id: 6,
-title: "Algorithmic Trading Bot",
-description: "Automated trading system that uses technical indicators and machine learning to make investment decisions.",
+id: 10,
+title: "Minecraft with Poses",
+description: "Used Google's mediapipe to classify poses and control movement in minecraft",
 category: "Machine Learning",
-technologies: ["Python", "Pandas", "Scikit-learn", "Alpha Vantage API"],
-githubUrl: "https://github.com/username/trading-bot",
+technologies: ["Python", "OpenCV", "MediaPipe"],
+githubUrl: "https://github.com/srikar-pasumarthy/pose-clasification-minecraft",
 demoUrl: null
 },
+
+{
+id: 6,
+title: "ThreeJS Landing Page",
+description: "My first ThreeJS application that is honestly sickening to look at.",
+category: "Web Dev",
+technologies: ["JavaScript", "HTML", "CSS", "ThreeJS"],
+githubUrl: "https://github.com/srikar-pasumarthy/threejs_landing_page",
+demoUrl: "https://srikar-pasumarthy.github.io/threejs_landing_page/"
+},
+
 {
 id: 7,
-title: "Smart Home Dashboard",
-description: "IoT control dashboard for managing connected devices and monitoring home metrics.",
+title: "Brick Braker",
+description: "A simple recreation of the brick breaker game.",
 category: "Misc.",
-technologies: ["React", "Node.js", "MQTT", "Raspberry Pi"],
-githubUrl: "https://github.com/username/smart-home",
-demoUrl: "https://demo-url.com/smart-home"
+technologies: ["Python"],
+githubUrl: "https://github.com/srikar-pasumarthy/brick-breaker",
+demoUrl: null
+},
+
+{
+id: 8,
+title: "Age Guesser",
+description: "My first android app, which just guesses your age based on your name.",
+category: "Mobile Dev",
+technologies: ["Java"],
+githubUrl: "https://github.com/srikar-pasumarthy/Age_From_Name",
+demoUrl: null
 }
 ];

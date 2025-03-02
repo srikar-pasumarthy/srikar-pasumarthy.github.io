@@ -25,18 +25,14 @@ export default function HeroAbout() {
               Hi, I'm <span className="highlight">Srikar</span> <span role="img" aria-label="wave">👋</span>
             </h1>
             
-            <div className="hero-subtitle">
-              Building elegant software solutions
-            </div>
-            
             <div className="about-text">
               <p>
                 I am currently a Software Engineer on the FI eTrading team at Truist Financial, 
-                optimizing bond trading algorithms and developing analytics dashboards.
+                optimizing bond trading algorithms and developing analytics dashboards
               </p>
               <p>
                 When I'm not coding, you'll find me reading books, experimenting with new recipes, 
-                travelling the world, or ruining my day watching Tottenham Hotspurs play
+                travelling the world, or ruining my day watching Tottenham Hotspurs play :)
               </p>
             </div>
             
