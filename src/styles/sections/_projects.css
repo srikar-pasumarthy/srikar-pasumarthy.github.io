@@ -1,0 +1,26 @@
+/* Projects Section */
+.projects-section {
+    background-color: var(--cream);
+    color: #111;
+  }
+  
+  .filter-controls {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Individual project items styling is in components/_cards.css */
+  
+  /* Responsive layout for projects section */
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }

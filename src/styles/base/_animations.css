@@ -1,0 +1,16 @@
+/* Animations */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* Page transitions */
+  .app-loading {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .app-loaded {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }

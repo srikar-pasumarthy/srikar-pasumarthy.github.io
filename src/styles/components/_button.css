@@ -1,0 +1,78 @@
+/* Buttons and interactive elements */
+
+/* Filter buttons */
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #333;
+    position: relative;
+    transition: color var(--transition-normal);
+  }
+  
+  .filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: width var(--transition-normal);
+  }
+  
+  .filter-btn:hover::after,
+  .filter-btn.active::after {
+    width: 100%;
+  }
+  
+  .filter-btn.active {
+    font-weight: 500;
+  }
+  
+  /* Project links */
+  .project-link {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #333;
+    border-radius: var(--border-radius-lg);
+    color: #333;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+  }
+  
+  .project-link:hover {
+    background: #333;
+    color: white;
+  }
+  
+  /* Technology tags */
+  .tech-tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-lg);
+    font-size: 0.9rem;
+    display: inline-block;
+  }
+  
+  .projects-section .tech-tag {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }

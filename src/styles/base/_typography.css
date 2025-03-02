@@ -1,0 +1,24 @@
+/* Typography */
+h1, h2, h3, h4, h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-top: 0;
+  }
+  
+  p, span, a, button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+  }
+  
+  .mega-title {
+    font-size: clamp(4rem, 12vw, 10rem);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .section-title {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    margin-bottom: 4rem;
+  }

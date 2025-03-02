@@ -1,0 +1,10 @@
+/* Work Section */
+.work-section {
+    background-color: var(--dark-bg);
+  }
+  
+  .work-items {
+    margin-top: 4rem;
+  }
+  
+  /* Individual work experience items styling is in components/_cards.css */

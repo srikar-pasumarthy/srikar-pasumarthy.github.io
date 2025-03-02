@@ -4,7 +4,7 @@ import TerminalAnimation from './components/animations/TerminalAnimation';
 import HeroAbout from './components/sections/HeroAbout';
 import Work from './components/sections/Work';
 import Projects from './components/sections/Projects';
-import './styles/style.css';
+import './styles/main.css';
 
 export default function App() {
     const [showAnimation, setShowAnimation] = useState(true);

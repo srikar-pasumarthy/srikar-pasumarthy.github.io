@@ -1,0 +1,26 @@
+:root {
+    /* Colors */
+    --dark-bg: #111111;
+    --dark-green: #1A2F2F;
+    --cream: #F8F5EB;
+    --text-primary: #EFEFEF;
+    --text-secondary: #A0A0A0;
+    --accent: #D4AF37;
+    
+    /* Spacing */
+    --section-padding: 8rem 0;
+    
+    /* Border Radius */
+    --border-radius-sm: 0.5rem;
+    --border-radius-md: 1rem;
+    --border-radius-lg: 2rem;
+    
+    /* Box Shadow */
+    --shadow-sm: 0 5px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+  }

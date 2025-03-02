@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+/* Reset and base styles */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+ul, ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
