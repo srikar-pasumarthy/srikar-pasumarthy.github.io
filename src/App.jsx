@@ -53,6 +53,9 @@ export default function App() {
 
     return (
         <>            
+            {/* Only show Navigation after the terminal animation is completed */}
+            {!showAnimation && <Navigation />}
+            
             <div className={isLoaded ? 'app-loaded' : 'app-loading'}>
                 {/* Terminal animation */}
                 {showAnimation && (
@@ -61,7 +64,6 @@ export default function App() {
                 
                 {/* Main content */}
                 <div className={mainContentClasses}>
-                    <Navigation />
                     <Suspense fallback={<div>Loading...</div>}>
                         <main>
                             <HeroAbout />

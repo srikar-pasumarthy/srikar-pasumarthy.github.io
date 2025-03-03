@@ -41,65 +41,83 @@ export default function Navigation() {
             setMenuOpen(false);
         }
     };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
     
     return (
-        <nav className={`nav ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
-            <div className="nav-links desktop-nav">
-                <a 
-                    href="#work" 
-                    className={`nav-link ${activeSection === 'work' ? 'active' : ''}`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection('work');
-                    }}
-                >
-                    Work
-                </a>
-                <a 
-                    href="#projects" 
-                    className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection('projects');
-                    }}
-                >
-                    Projects
-                </a>
-            </div>
-            
-            <button 
-                className="menu-toggle"
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-label="Toggle menu"
-            >
-                <div className={`menu-bar ${menuOpen ? 'open' : ''}`}></div>
-            </button>
-            
-            {/* Mobile navigation overlay */}
-            <div className={`mobile-nav ${menuOpen ? 'open' : ''}`}>
-                <div className="mobile-nav-links">
-                    <a 
-                        href="#work" 
-                        className={`mobile-nav-link ${activeSection === 'work' ? 'active' : ''}`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection('work');
-                        }}
+        <header className="header-persistent">
+            <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+                <div className="navbar-container">
+                    {/* Logo */}
+                    <div className="navbar-logo" onClick={scrollToTop}>
+                        <span className="logo-text">SP</span>
+                    </div>
+
+                    {/* Desktop Navigation */}
+                    <div className="navbar-links">
+                        <a 
+                            href="#work" 
+                            className={`navbar-link ${activeSection === 'work' ? 'active' : ''}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection('work');
+                            }}
+                        >
+                            Work
+                        </a>
+                        <a 
+                            href="#projects" 
+                            className={`navbar-link ${activeSection === 'projects' ? 'active' : ''}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection('projects');
+                            }}
+                        >
+                            Projects
+                        </a>
+                    </div>
+                    
+                    {/* Mobile Menu Toggle */}
+                    <button 
+                        className="mobile-menu-toggle"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        aria-label="Toggle menu"
                     >
-                        Work
-                    </a>
-                    <a 
-                        href="#projects" 
-                        className={`mobile-nav-link ${activeSection === 'projects' ? 'active' : ''}`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection('projects');
-                        }}
-                    >
-                        Projects
-                    </a>
+                        <div className={`menu-bar ${menuOpen ? 'open' : ''}`}></div>
+                    </button>
                 </div>
-            </div>
-        </nav>
+                
+                {/* Mobile Navigation Overlay */}
+                <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+                    <div className="mobile-menu-links">
+                        <a 
+                            href="#work" 
+                            className={`mobile-menu-link ${activeSection === 'work' ? 'active' : ''}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection('work');
+                            }}
+                        >
+                            Work
+                        </a>
+                        <a 
+                            href="#projects" 
+                            className={`mobile-menu-link ${activeSection === 'projects' ? 'active' : ''}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection('projects');
+                            }}
+                        >
+                            Projects
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
     );
 }
