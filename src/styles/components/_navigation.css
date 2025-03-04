@@ -219,11 +219,11 @@
 
 /* Ensure content doesn't get hidden behind the navbar */
 body {
-  padding-top: 80px; 
+  padding-top: 0; 
 }
 
 @media (max-width: 768px) {
   body {
-    padding-top: 70px;
+    padding-top: 0;
   }
 }
