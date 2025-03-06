@@ -8,9 +8,9 @@ export default function HeroAbout() {
   }, []);
 
   const imagePaths = [
-    "/photos/pfp-min.jpg",
-    "/photos/iceland-min.jpg",
-    "/photos/tottenham-min.jpg"
+    "images/pfp-min.jpg",
+    "images/iceland-min.jpg",
+    "images/tottenham-min.jpg"
   ];
 
   return (
