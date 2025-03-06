@@ -7,12 +7,6 @@ export default function HeroAbout() {
     setIsMounted(true);
   }, []);
 
-  const imagePaths = [
-    "images/pfp-min.jpg",
-    "images/iceland-min.jpg",
-    "images/tottenham-min.jpg"
-  ];
-
   return (
     <section className="hero-section" id="hero">
       {/* Gradient background overlay */}
@@ -43,18 +37,12 @@ export default function HeroAbout() {
           </div>
           
           <div className="hero-visual">
-            <div className="stacked-images">
-              {imagePaths.map((src, index) => (
-                <div 
-                  key={index} 
-                  className={`stacked-image stacked-image-${index+1}`}
-                  style={{
-                    backgroundImage: `url(${src})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                />
-              ))}
+            <div className="profile-image-container">
+              <img 
+                src="pfp2.jpg" 
+                alt="Srikar Pasumarthy" 
+                className="profile-image"
+              />
             </div>
           </div>
         </div>

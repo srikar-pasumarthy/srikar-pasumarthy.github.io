@@ -4,8 +4,14 @@
   background-color: var(--dark-bg);
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   overflow: hidden;
+  padding-top: 60px; 
+}
+
+.nav-spacer {
+  display: none;
 }
 
 .hero-gradient {
@@ -109,70 +115,46 @@
   position: relative;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.stacked-images {
-  position: relative;
-  height: 70vh;
+.profile-image-container {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 3px solid var(--glass-border);
+}
+
+.profile-image {
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.stacked-image {
-  position: absolute;
-  width: 70%;
-  height: 60%;
-  border: 5px solid #555;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.stacked-image-1 {
-  top: 10%;
-  left: 10%;
-  transform: rotate(-5deg);
-  z-index: 3;
-  border-color: var(--primary-color);
-}
-
-.stacked-image-2 {
-  top: 25%;
-  left: 20%;
-  transform: rotate(3deg);
-  z-index: 2;
-  border-color: var(--secondary-color);
-}
-
-.stacked-image-3 {
-  top: 40%;
-  left: 30%;
-  transform: rotate(-2deg);
-  z-index: 1;
-}
-
-.stacked-images:hover .stacked-image-1 {
-  transform: translateY(-10px) rotate(-7deg);
-}
-
-.stacked-images:hover .stacked-image-2 {
-  transform: translateY(-5px) rotate(5deg);
-}
-
-.stacked-images:hover .stacked-image-3 {
-  transform: translateY(-3px) rotate(-4deg);
-}
-
-/* Responsive design for hero section */
 @media (max-width: 992px) {
+  .hero-section {
+    padding-top: 80px; 
+  }
+  
+  .nav-spacer {
+    display: block;
+    height: 40px; 
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     gap: 3rem;
     padding: 2rem 0;
   }
   
-  .stacked-images {
-    height: 50vh;
+  .profile-image-container {
+    width: 60%;
     margin: 0 auto;
   }
   
@@ -182,5 +164,15 @@
   
   .hero-cta {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: 90px;
+  }
+  
+  .nav-spacer {
+    height: 50px;
   }
 }
