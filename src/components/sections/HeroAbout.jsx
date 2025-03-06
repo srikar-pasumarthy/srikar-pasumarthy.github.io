@@ -21,12 +21,12 @@ export default function HeroAbout() {
             
             <div className="about-text">
               <p>
-                I am currently a Software Engineer on the FI eTrading team at Truist Financial, 
+                I am currently a <span className="highlight-accent">Software Engineer</span> on the FI eTrading team at Truist Financial, 
                 optimizing bond trading algorithms and developing analytics dashboards
               </p>
               <p>
-                When I'm not coding, you'll find me reading books, experimenting with new recipes, 
-                travelling the world, or ruining my day watching Tottenham Hotspurs play :)
+                When I'm not coding, you'll find me <span className="highlight-accent">reading</span> books, <span className="highlight-accent">cooking</span> new recipes, 
+                <span className="highlight-accent"> travelling</span> the world, or ruining my day watching <span className="highlight-accent">Tottenham Hotspurs</span> play 🫡
               </p>
             </div>
             
