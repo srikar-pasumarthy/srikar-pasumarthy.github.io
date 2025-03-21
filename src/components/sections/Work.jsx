@@ -55,7 +55,6 @@ export default function Work() {
         <div className={`mega-title ${isInView ? 'fade-in' : ''}`}>work</div>
         
         <div className="work-container">
-          {/* Left side: Timeline */}
           <div className="work-timeline">
             {workExperiences.map((job, index) => (
               <div key={job.id} className="timeline-item">
@@ -79,7 +78,6 @@ export default function Work() {
             ))}
           </div>
           
-          {/* Right side: Job details */}
           <div className="work-details glass-card">
             <div className="work-details-inner">
               <div className="work-header">
@@ -88,10 +86,17 @@ export default function Work() {
                   <span className="company-name">{activeJobData.company}</span>
                   <span className="work-period">{activeJobData.period}</span>
                 </div>
+                
+                <div className="tech-tags">
+                  {activeJobData.technologies.map((tech, index) => (
+                    <span key={index} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
               </div>
               
+              <div className="blue-divider"></div>
+              
               <div className="work-content">
-                <h3 className="responsibilities-title">Responsibilities</h3>
                 <ul className="work-responsibilities">
                   {activeJobData.responsibilities.map((responsibility, index) => (
                     <li key={index} className="responsibility-item">
@@ -99,15 +104,6 @@ export default function Work() {
                     </li>
                   ))}
                 </ul>
-              </div>
-              
-              <div className="work-footer">
-                <h3 className="technologies-title">Technologies</h3>
-                <div className="tech-tags">
-                  {activeJobData.technologies.map((tech, index) => (
-                    <span key={index} className="tech-tag">{tech}</span>
-                  ))}
-                </div>
               </div>
             </div>
           </div>

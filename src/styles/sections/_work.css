@@ -22,7 +22,6 @@
   margin-top: 4rem;
 }
 
-/* Timeline styling */
 .work-timeline {
   position: relative;
   padding-right: 2rem;
@@ -122,7 +121,6 @@
   margin: 0;
 }
 
-/* Job details styling */
 .work-details {
   padding: 0;
   transition: all var(--transition-normal);
@@ -137,18 +135,15 @@
 }
 
 .work-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
-.work-header::after {
-  content: '';
-  position: absolute;
-  bottom: -1rem;
-  left: 0;
-  width: 50px;
+.blue-divider {
   height: 2px;
   background: var(--primary-color);
+  margin: 1.5rem 0 2rem 0;
+  width: 40px;
 }
 
 .work-title {
@@ -165,6 +160,7 @@
   justify-content: space-between;
   align-items: center;
   color: var(--text-secondary);
+  margin-bottom: 1rem;
 }
 
 .company-name {
@@ -177,13 +173,7 @@
 }
 
 .work-content {
-  margin-bottom: 2rem;
-}
-
-.responsibilities-title, .technologies-title {
-  font-size: 1.1rem;
-  margin: 0 0 1rem 0;
-  color: var(--text-secondary);
+  margin-bottom: 1rem;
 }
 
 .work-responsibilities {
@@ -214,6 +204,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .tech-tag {
